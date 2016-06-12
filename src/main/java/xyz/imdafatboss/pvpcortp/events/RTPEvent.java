@@ -30,14 +30,14 @@ public class RTPEvent implements Listener{
         if(e.getWhoClicked() instanceof Player){
 
             Player p = (Player) e.getWhoClicked();
-            if(e.getInventory().getTitle().equals(gui.rtpGUI().getTitle())){
+            if(e.getInventory().getName().equals(gui.rtpGUI().getName())){
 
                 if(e.getCurrentItem() == null || !e.getCurrentItem().hasItemMeta()){ e.setCancelled(true); return; }
 
                 if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(" ")){ e.setCancelled(true) ;return; }
 
                 // Near TP
-                if(e.getCurrentItem() == gui.getNearTP()){
+                if(e.getCurrentItem().getItemMeta().getDisplayName().contains(gui.getNearTP().getItemMeta().getDisplayName())){
 
                     String prefix = new ConfigYML(plugin, ConfigYML.Value.PREFIX).getString();
                     String perm = new ConfigYML(plugin, ConfigYML.Value.NEAR_PERM).getString();
@@ -105,7 +105,7 @@ public class RTPEvent implements Listener{
                 }
 
                 // Medium TP
-                if(e.getCurrentItem() == gui.getMediumTP()){
+                if(e.getCurrentItem().getItemMeta().getDisplayName().contains(gui.getMediumTP().getItemMeta().getDisplayName())){
 
                     String prefix = new ConfigYML(plugin, ConfigYML.Value.PREFIX).getString();
                     String perm = new ConfigYML(plugin, ConfigYML.Value.MEDIUM_PERM).getString();
@@ -172,7 +172,7 @@ public class RTPEvent implements Listener{
 
                 }
 
-                if(e.getCurrentItem() == gui.getExtremeTP()){
+                if(e.getCurrentItem().getItemMeta().getDisplayName().contains(gui.getExtremeTP().getItemMeta().getDisplayName())){
 
                     String prefix = new ConfigYML(plugin, ConfigYML.Value.PREFIX).getString();
                     String perm = new ConfigYML(plugin, ConfigYML.Value.EXTREME_PERM).getString();
