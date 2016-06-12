@@ -26,81 +26,95 @@ public class ConfigYML {
     public int getInt(){
 
         fm = new FileManager(plugin);
-        FileManager.Config cfg = fm.getConfig("config.yml");
-        switch (val){
 
-            case NEAR_COST:
+        if(fm.getConfig("config.yml") != null) {
 
-                return cfg.get().getInt("neartp.cost");
+            FileManager.Config cfg = fm.getConfig("config.yml");
+            switch (val) {
 
-            case NEAR_RANGE:
+                case NEAR_COST:
 
-                return cfg.get().getInt("neartp.range");
+                    return cfg.get().getInt("neartp.cost");
 
-            case MEDIUM_COST:
+                case NEAR_RANGE:
 
-                return cfg.get().getInt("mediumtp.cost");
+                    return cfg.get().getInt("neartp.range");
 
-            case MEDIUM_RANGE:
+                case MEDIUM_COST:
 
-                return cfg.get().getInt("mediumtp.range");
+                    return cfg.get().getInt("mediumtp.cost");
 
-            case EXTREME_COST:
+                case MEDIUM_RANGE:
 
-                return cfg.get().getInt("extremetp.cost");
+                    return cfg.get().getInt("mediumtp.range");
 
-            case EXTREME_RANGE:
+                case EXTREME_COST:
 
-                return cfg.get().getInt("extremetp.range");
+                    return cfg.get().getInt("extremetp.cost");
 
-            default:
+                case EXTREME_RANGE:
 
-                return 0;
+                    return cfg.get().getInt("extremetp.range");
 
+                default:
+
+                    return 0;
+
+
+            }
 
         }
+
+        return 0;
 
     }
 
     public String getString(){
 
         fm = new FileManager(plugin);
-        FileManager.Config cfg = fm.getConfig("config.yml");
-        switch (val){
 
-            case PREFIX:
+        if(fm.getConfig("config.yml") != null) {
 
-                return Msg.translate(cfg.get().getString("prefix"));
+            FileManager.Config cfg = fm.getConfig("config.yml");
+            switch (val) {
 
-            case NEAR_PERM:
+                case PREFIX:
 
-                return Msg.translate(cfg.get().getString("neartp.perm"));
+                    return Msg.translate(cfg.get().getString("prefix"));
 
-            case MEDIUM_PERM:
+                case NEAR_PERM:
 
-                return Msg.translate(cfg.get().getString("mediumtp.perm"));
+                    return Msg.translate(cfg.get().getString("neartp.perm"));
 
-            case EXTREME_PERM:
+                case MEDIUM_PERM:
 
-                return Msg.translate(cfg.get().getString("extremetp.perm"));
+                    return Msg.translate(cfg.get().getString("mediumtp.perm"));
 
-            case NO_PERM:
+                case EXTREME_PERM:
 
-                return Msg.translate(cfg.get().getString("no-perm"));
+                    return Msg.translate(cfg.get().getString("extremetp.perm"));
 
-            case NOT_ENOUGH:
+                case NO_PERM:
 
-                return Msg.translate(cfg.get().getString("not-enough"));
+                    return Msg.translate(cfg.get().getString("no-perm"));
 
-            case TP_MSG:
+                case NOT_ENOUGH:
 
-                return Msg.translate(cfg.get().getString("tp-msg"));
+                    return Msg.translate(cfg.get().getString("not-enough"));
 
-            default:
+                case TP_MSG:
 
-                return "The config.yml is invalid.";
+                    return Msg.translate(cfg.get().getString("tp-msg"));
+
+                default:
+
+                    return "The config.yml is invalid.";
+
+            }
 
         }
+
+        return null;
 
     }
 
