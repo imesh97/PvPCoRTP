@@ -84,7 +84,7 @@ public class RTPEvent implements Listener{
                                 p.closeInventory();
                                 p.teleport(loc);
                                 p.playSound(loc, Sound.EXPLODE, 1.0F, 1.0F);
-                                p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 200, 100));
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 300, 100));
 
                                 String msg = new ConfigYML(plugin, ConfigYML.Value.TP_MSG).getString();
                                 double distance = ol.distance(loc);
@@ -152,7 +152,7 @@ public class RTPEvent implements Listener{
                                 p.closeInventory();
                                 p.teleport(loc);
                                 p.playSound(loc, Sound.EXPLODE, 1.0F, 1.0F);
-                                p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 200, 100));
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 300, 100));
 
                                 String msg = new ConfigYML(plugin, ConfigYML.Value.TP_MSG).getString();
                                 double distance = ol.distance(loc);
@@ -219,7 +219,7 @@ public class RTPEvent implements Listener{
                                 p.closeInventory();
                                 p.teleport(loc);
                                 p.playSound(loc, Sound.EXPLODE, 1.0F, 1.0F);
-                                p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 200, 100));
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 300, 100));
 
                                 String msg = new ConfigYML(plugin, ConfigYML.Value.TP_MSG).getString();
                                 double distance = ol.distance(loc);
