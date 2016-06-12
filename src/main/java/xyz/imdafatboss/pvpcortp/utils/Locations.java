@@ -11,7 +11,7 @@ public class Locations {
 
         Random r = new Random();
         int x = r.nextInt(range) + 1;
-        int y = 150;
+        int y = 50;
         int z = r.nextInt(range) + 1;
 
         Location loc = new Location(world, x, y, z);
