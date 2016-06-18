@@ -16,8 +16,8 @@
         </repository>
 
         <repository>
-            <id>ess-repo</id>
-            <url>http://repo.ess3.net/content/groups/essentials</url>
+            <id>vault-repo</id>
+            <url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
         </repository>
 
     </repositories>
@@ -33,11 +33,12 @@
             <scope>provided</scope>
         </dependency>
 
-        <!--Essentials API-->
+        <!--Vault API-->
         <dependency>
-            <groupId>net.ess3</groupId>
-            <artifactId>Essentials</artifactId>
-            <version>Pre2.13.1.7</version>
+            <groupId>net.milkbowl.vault</groupId>
+            <artifactId>VaultAPI</artifactId>
+            <version>1.5</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>
