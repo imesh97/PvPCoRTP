@@ -1,6 +1,5 @@
 package xyz.imdafatboss.pvpcortp.events;
 
-import com.earth2me.essentials.api.Economy;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -11,6 +10,7 @@ import org.bukkit.potion.PotionEffectType;
 import xyz.imdafatboss.pvpcortp.Home;
 import xyz.imdafatboss.pvpcortp.config.ConfigYML;
 import xyz.imdafatboss.pvpcortp.gui.RTPGui;
+import xyz.imdafatboss.pvpcortp.utils.Economy;
 import xyz.imdafatboss.pvpcortp.utils.Locations;
 
 public class RTPEvent implements Listener{
@@ -57,7 +57,7 @@ public class RTPEvent implements Listener{
                         int cost = new ConfigYML(plugin, ConfigYML.Value.NEAR_COST).getInt();
                         try{
 
-                            if(!Economy.hasEnough(p.getName(), cost * 1.0)){
+                            if(!Economy.hasEnough(p, cost)){
 
                                 String notEnough = new ConfigYML(plugin, ConfigYML.Value.NOT_ENOUGH).getString();
                                 e.setCancelled(true);
@@ -69,7 +69,7 @@ public class RTPEvent implements Listener{
 
                                 try{
 
-                                    Economy.subtract(p.getName(), cost * 1.0);
+                                    Economy.removeMoney(p, cost);
 
                                 }catch (Exception e2){
 
@@ -125,7 +125,7 @@ public class RTPEvent implements Listener{
                         int cost = new ConfigYML(plugin, ConfigYML.Value.MEDIUM_COST).getInt();
                         try{
 
-                            if(!Economy.hasEnough(p.getName(), cost * 1.0)){
+                            if(!Economy.hasEnough(p, cost)){
 
                                 String notEnough = new ConfigYML(plugin, ConfigYML.Value.NOT_ENOUGH).getString();
                                 e.setCancelled(true);
@@ -137,7 +137,7 @@ public class RTPEvent implements Listener{
 
                                 try{
 
-                                    Economy.subtract(p.getName(), cost * 1.0);
+                                    Economy.removeMoney(p, cost);
 
                                 }catch (Exception e2){
 
@@ -192,7 +192,7 @@ public class RTPEvent implements Listener{
                         int cost = new ConfigYML(plugin, ConfigYML.Value.EXTREME_COST).getInt();
                         try{
 
-                            if(!Economy.hasEnough(p.getName(), cost * 1.0)){
+                            if(!Economy.hasEnough(p, cost)){
 
                                 String notEnough = new ConfigYML(plugin, ConfigYML.Value.NOT_ENOUGH).getString();
                                 e.setCancelled(true);
@@ -204,7 +204,7 @@ public class RTPEvent implements Listener{
 
                                 try{
 
-                                    Economy.subtract(p.getName(), cost * 1.0);
+                                    Economy.removeMoney(p, cost);
 
                                 }catch (Exception e2){
 
